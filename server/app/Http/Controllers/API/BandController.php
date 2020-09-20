@@ -16,8 +16,7 @@ class BandController extends Controller
     public function index()
     {
         //
-        $listBands = Band::all();
-        return $listBands;
+        return BandResource::collection(Band::with('albums')->paginate(10));
     }
 
     /**
