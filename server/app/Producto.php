@@ -8,6 +8,11 @@ class Producto extends Model
 {
     protected $fillable = [
         'nombre',
-        'precio'
+        'precio',
+        'id_categoria'
     ];
+
+    public function categoria(){
+        return $this->belogsTo('App\Categoria');
+    }
 }

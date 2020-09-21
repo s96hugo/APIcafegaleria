@@ -17,7 +17,8 @@ class CreateCategoriasTable extends Migration
         Schema::create('categorias', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->enum('categoria', ['bebida', 'tosatada', 'tarta', 'tapa', 'otro']);
+            $table->enum('categoria', ['cafe', 'cerveza', 'refresco', 
+                        'zumo', 'cocktail', 'tarta', 'tapa', 'racion', 'otro']);
         });
     }
 
