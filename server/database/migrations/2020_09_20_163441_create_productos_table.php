@@ -18,6 +18,7 @@ class CreateProductosTable extends Migration
             $table->timestamps();
             $table->string('nombre');
             $table->double('precio');
+            $table->integer('id_categoria');
         });
     }
 

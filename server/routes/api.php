@@ -19,5 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::apiResources([
-    'bands' => 'API\BandController'
+    'bands' => 'API\BandController',
+    'users' => 'API\UserController',
+    'login' => 'Auth\LoginController',
 ]);

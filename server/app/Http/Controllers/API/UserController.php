@@ -4,9 +4,9 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Band;
+use App\User;
 
-class BandController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,8 @@ class BandController extends Controller
      */
     public function index()
     {
-        //return BandResource::collection(Band::with('albums')->paginate(10));
-        $listBands = Band::all();
-        return $listBands;
-        
+        $listUsers = User::all();
+        return $listUsers;
     }
 
     /**
@@ -29,9 +27,8 @@ class BandController extends Controller
      */
     public function store(Request $request)
     {
-        $createBand = Band::create($request->all());
-        return  $createBand;
-        //
+        $createUser = User::create($request->all());
+        return $createUser;
     }
 
     /**
@@ -42,9 +39,8 @@ class BandController extends Controller
      */
     public function show($id)
     {
-        $band = Band::findOrFail($id);
-        return $band;
-        //
+        $showUser = User::findOrFail($id);
+        return $showUser;
     }
 
     /**
@@ -56,10 +52,9 @@ class BandController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $updateBandById = Band::findOrFail($id);
-        $updateBandById->update($request->all());
-        return $updateBandById;
-        //
+        $updateUser = User::findOrFail($id);
+        $updateUser->update($request->all());
+        return $updateUser;
     }
 
     /**
@@ -70,8 +65,7 @@ class BandController extends Controller
      */
     public function destroy($id)
     {
-        $deleteBandById = Band::find($id)->delete();
+        $destroyUser = User::findOrFail($id)->delete();
         return response()->json([], 204);
-        //
     }
 }
